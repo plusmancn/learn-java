@@ -1,4 +1,4 @@
-//: arrays/ArrayOfGenericType.java
+package arrays;//: arrays/ArrayOfGenericType.java
 // Arrays of generic types won't compile.
 
 public class ArrayOfGenericType<T> {
