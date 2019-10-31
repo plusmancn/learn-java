@@ -7,5 +7,7 @@ public class E5 {
         Integer[][] a = new Integer[2][3];
 
         System.out.println(Arrays.deepToString(a));
+
+        System.out.println(Arrays.asList());
     }
 }
