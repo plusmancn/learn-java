@@ -1,4 +1,4 @@
-//: arrays/ComparingArrays.java
+package arrays;//: arrays/ComparingArrays.java
 // Using Arrays.equals()
 import java.util.*;
 import static net.mindview.util.Print.*;

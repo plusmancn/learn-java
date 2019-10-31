@@ -1,4 +1,4 @@
-//: arrays/CopyingArrays.java
+package arrays;//: arrays/CopyingArrays.java
 // Using System.arraycopy()
 import java.util.*;
 import static net.mindview.util.Print.*;
@@ -29,6 +29,10 @@ public class CopyingArrays {
     print("v = " + Arrays.toString(v));
     System.arraycopy(v, 0, u, u.length/2, v.length);
     print("u = " + Arrays.toString(u));
+
+    // RunError: java.lang.ArrayStoreException
+    // System.arraycopy(u, 0, i, 0, 3);
+    // print("i = " + Arrays.toString(i));
   }
 } /* Output:
 i = [47, 47, 47, 47, 47, 47, 47]
