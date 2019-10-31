@@ -1,4 +1,4 @@
-//: arrays/TestGenerated.java
+package arrays;//: arrays/TestGenerated.java
 import java.util.*;
 import net.mindview.util.*;
 
