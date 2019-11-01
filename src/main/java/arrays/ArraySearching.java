@@ -1,4 +1,4 @@
-//: arrays/ArraySearching.java
+package arrays;//: arrays/ArraySearching.java
 // Using Arrays.binarySearch().
 import java.util.*;
 import net.mindview.util.*;
@@ -8,9 +8,11 @@ public class ArraySearching {
   public static void main(String[] args) {
     Generator<Integer> gen =
       new RandomGenerator.Integer(1000);
-    int[] a = ConvertTo.primitive(
-      Generated.array(new Integer[25], gen));
-    Arrays.sort(a);
+    Integer[] b = Generated.array(new Integer[25], gen);
+    Arrays.sort(b);
+
+    int[] a = ConvertTo.primitive(b);
+
     print("Sorted array: " + Arrays.toString(a));
     while(true) {
       int r = gen.next();

@@ -1,4 +1,4 @@
-//: arrays/Reverse.java
+package arrays;//: arrays/Reverse.java
 // The Collections.reverseOrder() Comparator
 import java.util.*;
 import net.mindview.util.*;

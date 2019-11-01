@@ -1,4 +1,4 @@
-//: arrays/CompType.java
+package arrays;//: arrays/CompType.java
 // Implementing Comparable in a class.
 import java.util.*;
 import net.mindview.util.*;
@@ -23,13 +23,21 @@ public class CompType implements Comparable<CompType> {
   }
   private static Random r = new Random(47);
   public static Generator<CompType> generator() {
-    return new Generator<CompType>() {
-      public CompType next() {
-        return new CompType(r.nextInt(100),r.nextInt(100));
-      }
-    };
+    // return new Generator<CompType>() {
+      // @Override
+      // public CompType next() {
+      //   return null;
+      // }
+      // @Override
+      // public CompType next() {
+      //   return new CompType(r.nextInt(100),r.nextInt(100));
+      // }
+
+      return () -> new CompType(r.nextInt(100),r.nextInt(100));
   }
   public static void main(String[] args) {
+    Generator<CompType> gen = generator();
+
     CompType[] a =
       Generated.array(new CompType[12], generator());
     print("before sorting:");

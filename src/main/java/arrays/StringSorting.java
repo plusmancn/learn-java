@@ -1,4 +1,4 @@
-//: arrays/StringSorting.java
+package arrays;//: arrays/StringSorting.java
 // Sorting an array of Strings.
 import java.util.*;
 import net.mindview.util.*;
