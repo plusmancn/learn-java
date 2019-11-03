@@ -1,4 +1,4 @@
-//: holding/PrintingContainers.java
+package holding;//: holding/PrintingContainers.java
 // Containers print themselves automatically.
 import java.util.*;
 import static net.mindview.util.Print.*;

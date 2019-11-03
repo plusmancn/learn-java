@@ -1,4 +1,4 @@
-//: holding/ApplesAndOrangesWithoutGenerics.java
+package holding;//: holding/ApplesAndOrangesWithoutGenerics.java
 // Simple container example (produces compiler warnings).
 // {ThrowsException}
 import java.util.*;
@@ -12,7 +12,7 @@ class Apple {
 class Orange {}	
 
 public class ApplesAndOrangesWithoutGenerics {
-  @SuppressWarnings("unchecked")
+  // @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     ArrayList apples = new ArrayList();
     for(int i = 0; i < 3; i++)

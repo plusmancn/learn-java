@@ -1,4 +1,4 @@
-//: holding/ApplesAndOrangesWithGenerics.java
+package holding;//: holding/ApplesAndOrangesWithGenerics.java
 import java.util.*;
 
 public class ApplesAndOrangesWithGenerics {

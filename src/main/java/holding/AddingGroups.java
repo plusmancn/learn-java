@@ -1,4 +1,4 @@
-//: holding/AddingGroups.java
+package holding;//: holding/AddingGroups.java
 // Adding groups of elements to Collection objects.
 import java.util.*;
 

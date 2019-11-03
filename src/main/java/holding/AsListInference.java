@@ -1,4 +1,4 @@
-//: holding/AsListInference.java
+package holding;//: holding/AsListInference.java
 // Arrays.asList() makes its best guess about type.
 import java.util.*;
 
@@ -15,8 +15,9 @@ public class AsListInference {
       new Crusty(), new Slush(), new Powder());
 
     // Won't compile:
-    // List<Snow> snow2 = Arrays.asList(
-    //   new Light(), new Heavy());
+    // Java SE8 Fix it
+    List<Snow> snow2 = Arrays.asList(
+      new Light(), new Heavy());
     // Compiler says:
     // found   : java.util.List<Powder>
     // required: java.util.List<Snow>

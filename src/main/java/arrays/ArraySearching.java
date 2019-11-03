@@ -23,6 +23,15 @@ public class ArraySearching {
         break; // Out of while loop
       }
     }
+
+    int[] c = {-3, -2, -1};
+    print(Arrays.binarySearch(c, -2));
+
+    // >>> 是无符号位移
+    print(2 >>> 1);
+    print(-2 >>> 1);
+    // 保留高位的位移
+    print(-2 >> 1);
   }
 } /* Output:
 Sorted array: [128, 140, 200, 207, 258, 258, 278, 288, 322, 429, 511, 520, 522, 551, 555, 589, 693, 704, 809, 861, 861, 868, 916, 961, 998]
