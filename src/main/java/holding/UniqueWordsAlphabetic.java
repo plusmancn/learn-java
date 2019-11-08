@@ -1,4 +1,4 @@
-//: holding/UniqueWordsAlphabetic.java
+package holding;//: holding/UniqueWordsAlphabetic.java
 // Producing an alphabetic listing.
 import java.util.*;
 import net.mindview.util.*;

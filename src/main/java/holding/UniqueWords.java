@@ -1,4 +1,4 @@
-//: holding/UniqueWords.java
+package holding;//: holding/UniqueWords.java
 import java.util.*;
 import net.mindview.util.*;
 
