@@ -1,13 +1,13 @@
-//: holding/PriorityQueueDemo.java
+package holding;//: holding/PriorityQueueDemo.java
 import java.util.*;
 
 public class PriorityQueueDemo {
   public static void main(String[] args) {
     PriorityQueue<Integer> priorityQueue =
-      new PriorityQueue<Integer>();
+            new PriorityQueue<>();
     Random rand = new Random(47);
     for(int i = 0; i < 10; i++)
-      priorityQueue.offer(rand.nextInt(i + 10));
+      priorityQueue.add(rand.nextInt(i + 10));
     QueueDemo.printQ(priorityQueue);
 
     List<Integer> ints = Arrays.asList(25, 22, 20,
