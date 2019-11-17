@@ -12,6 +12,15 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.sum</groupId>
+            <artifactId>mirror</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/apt-mirror-api-0.1.jar</systemPath>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>

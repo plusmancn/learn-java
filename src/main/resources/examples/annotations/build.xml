@@ -159,7 +159,7 @@
     <java
      classname="annotations.database.TableCreator"
      classpath="${java.class.path};${basedir};${basedir}/.."
-     dir="../annotations/database/"
+     dir="../../../java/annotations/database/"
      failonerror="true"
      fork="true">
       <arg line="annotations.database.Member"/>
