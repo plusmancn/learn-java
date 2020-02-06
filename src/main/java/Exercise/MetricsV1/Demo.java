@@ -12,7 +12,7 @@ public class Demo {
         collector.recordRequest(new RequestInfo("login", 23, 12434));
         collector.recordRequest(new RequestInfo("login", 1223, 14234));
 
-        ConsoleReporter consoleReporter = new ConsoleReporter(storage);
+        ConsoleReporter consoleReporter = new ConsoleReporter(storage, new Aggregator(), new ConsoleViewer());
         consoleReporter.startRepeatedReport(10, 10);
 
         // try {

@@ -2,10 +2,22 @@ package Exercise.MetricsV1;
 
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Aggregator {
-    public static RequestStat aggregate(List<RequestInfo> requestInfos, long durationInMillis) {
+    public Map<String, RequestStat> aggregate(Map<String, List<RequestInfo>> requestInfos, long durationInMillis) {
+        Map<String, RequestStat> requestStats = new HashMap<>();
+        requestInfos.forEach((String k, List<RequestInfo> v) -> {
+            requestStats.put(k, doAggregate(v, durationInMillis));
+        });
+
+        return requestStats;
+    }
+
+
+    private RequestStat doAggregate(List<RequestInfo> requestInfos, long durationInMillis) {
         double maxRespTime = Double.MIN_VALUE;
         double minRespTime = Double.MAX_VALUE;
         double avgRespTime = -1;
@@ -44,6 +56,9 @@ public class Aggregator {
             p999RespTime = requestInfos.get(idx999).getResponseTime();
             p99RespTime = requestInfos.get(idx99).getResponseTime();
         }
+
+
+        // 每个单值的计算逻辑，可以继续拆分为私有函数
         RequestStat requestStat = new RequestStat();
         requestStat.setMaxResponseTime(maxRespTime);
         requestStat.setMinResponseTime(minRespTime);
