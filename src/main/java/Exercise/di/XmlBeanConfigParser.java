@@ -64,16 +64,19 @@ public class XmlBeanConfigParser implements BeanConfigParser{
             if (node.getNodeType() != Node.ELEMENT_NODE) continue;
             Element element = (Element) node;
 
-            BeanDefinition.ConstructorArg constructorArg = new BeanDefinition.ConstructorArg();
+            BeanDefinition.ConstructorArg constructorArg = null;
             if (!element.getAttribute("type").isEmpty()) {
-                constructorArg.setArg(element.getAttribute("value"));
-                constructorArg.setType(String.class);
+                constructorArg = new BeanDefinition.ConstructorArg.Builder()
+                        .setArg(element.getAttribute("value"))
+                        .setType(String.class)
+                        .build();
             }
 
             if (!element.getAttribute("ref").isEmpty()) {
-                constructorArg.setRef(true);
-                constructorArg.setType(RedisCounter.class);
-                constructorArg.setArg(element.getAttribute("ref"));
+                constructorArg = new BeanDefinition.ConstructorArg.Builder()
+                        .setRef(true)
+                        .setArg(element.getAttribute("ref"))
+                        .build();
             }
 
             beanDefinition.addConstructorArg(constructorArg);

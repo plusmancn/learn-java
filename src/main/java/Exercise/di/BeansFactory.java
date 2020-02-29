@@ -57,8 +57,8 @@ public class BeansFactory {
                         if (refBeanDefinition == null) {
                             throw new NoSuchBeanDefinitionException("Bean is not defined: " + arg.getArg());
                         }
-                        argClasses[i] = arg.getType();
                         argObjects[i] = createBean(refBeanDefinition);
+                        argClasses[i] = argObjects[i].getClass();
                     }
                 }
 

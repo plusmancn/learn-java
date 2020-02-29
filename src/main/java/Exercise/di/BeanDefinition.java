@@ -1,5 +1,7 @@
 package Exercise.di;
 
+import javafx.util.Builder;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,19 +54,72 @@ public class BeanDefinition {
     }
 
     public static class ConstructorArg {
-        private boolean isRef = false;
+        private boolean isRef;
         private Class type;
         private Object arg;
 
-        public void setRef(boolean ref) {
-            isRef = ref;
+        /**
+         * 内部静态类，可以访问私有构造函数？
+         */
+        private ConstructorArg(Builder builder) {
+            this.isRef = builder.getIsRef();
+            this.type = builder.getType();
+            this.arg = builder.getArg();
         }
-        public void setType(Class type) {
-            this.type = type;
+
+        public static class Builder {
+            private boolean isRef = false;
+            private Class type;
+            private Object arg;
+
+            public Builder setRef(Boolean isRef) {
+                this.isRef = isRef;
+                return this;
+            }
+
+            public Builder setType(Class type) {
+                this.type = type;
+                return this;
+            }
+
+            public Builder setArg(Object arg) {
+                this.arg = arg;
+                return this;
+            }
+
+            public ConstructorArg build() {
+                if (this.isRef) {
+                    if (this.type != null) {
+                        throw new IllegalArgumentException("当参数为引用类型时，无需设置 type 参数");
+                    }
+
+                    // null 是 string 实例妈？
+                    if (!(arg instanceof String)) {
+                        throw new IllegalArgumentException("请设置引用 ID");
+                    }
+                } else {
+                    if (this.type == null || this.arg == null) {
+                        throw new IllegalArgumentException("当参数为非引用类型时，type 和 arg 参数必填");
+                    }
+                }
+
+                return new ConstructorArg(this);
+            }
+
+            // Getter
+            public boolean getIsRef() {
+                return isRef;
+            }
+
+            public Class getType() {
+                return type;
+            }
+
+            public Object getArg() {
+                return arg;
+            }
         }
-        public void setArg(Object arg) {
-            this.arg = arg;
-        }
+
         public boolean isRef() {
             return isRef;
         }
