@@ -29,7 +29,6 @@ public class ClassPathXmlApplicationContext implements ApplicationContext{
                 try {
                     in.close();
                 } catch (IOException e) {
-                    // TODO: log error
                 }
             }
         }

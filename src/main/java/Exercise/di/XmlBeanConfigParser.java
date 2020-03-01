@@ -22,7 +22,7 @@ public class XmlBeanConfigParser implements BeanConfigParser{
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             Document doc = documentBuilder.parse(inputStream);
 
-            // TODO: read it later
+            // TODO: read it later, 关于 xml 为什么需要 normalize 一下
             //optional, but recommended
             //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
             doc.getDocumentElement().normalize();
