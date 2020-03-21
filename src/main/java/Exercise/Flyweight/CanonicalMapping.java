@@ -1,4 +1,4 @@
-//: containers/CanonicalMapping.java
+package Exercise.Flyweight;
 // Demonstrates WeakHashMap.
 import java.util.*;
 

@@ -1,4 +1,4 @@
-//: containers/References.java
+package Exercise.Flyweight;//: containers/References.java
 // Demonstrates Reference objects
 import java.lang.ref.*;
 import java.util.*;
@@ -23,7 +23,7 @@ public class References {
       System.out.println("In queue: " + inq.get());
   }
   public static void main(String[] args) {
-    int size = 10;
+    int size = 1000;
     // Or, choose size via the command line:
     if(args.length > 0)
       size = new Integer(args[0]);
@@ -35,6 +35,7 @@ public class References {
       System.out.println("Just created: " + sa.getLast());
       checkQueue();
     }
+
     LinkedList<WeakReference<VeryBig>> wa =
       new LinkedList<WeakReference<VeryBig>>();
     for(int i = 0; i < size; i++) {
@@ -48,6 +49,8 @@ public class References {
     WeakReference<VeryBig> w =
       new WeakReference<VeryBig>(new VeryBig("Weak"));
     System.gc();
+
+
     LinkedList<PhantomReference<VeryBig>> pa =
       new LinkedList<PhantomReference<VeryBig>>();
     for(int i = 0; i < size; i++) {
@@ -56,5 +59,7 @@ public class References {
       System.out.println("Just created: " + pa.getLast());
       checkQueue();
     }
+
+    //
   }
 } /* (Execute to see output) *///:~
