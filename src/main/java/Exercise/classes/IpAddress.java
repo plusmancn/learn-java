@@ -1,7 +1,5 @@
 package Exercise.classes;
 
-import com.sun.tools.javac.util.StringUtils;
-
 public class IpAddress {
     public boolean isValidIpAddressV1(String ipAddress) {
         if(ipAddress.isEmpty()) {
