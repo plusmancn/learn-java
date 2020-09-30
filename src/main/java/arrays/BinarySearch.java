@@ -1,3 +1,6 @@
+package arrays;//: arrays/AlphabeticSearch.java
+
+
 public class BinarySearch {
 
     public int binarySearch(int[] inputArr, int key) {
