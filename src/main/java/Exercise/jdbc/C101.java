@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class C101 {
+    public C101() {
+    }
+
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
