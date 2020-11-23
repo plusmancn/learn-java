@@ -10,10 +10,12 @@ interface IUserController {
 }
 
 class UserController implements  IUserController {
+    @Override
     public void login() {
         System.out.println("user is login");
     }
 
+    @Override
     public void getUserName() {
         System.out.println("You name is plusman");
     }
