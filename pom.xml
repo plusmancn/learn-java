@@ -62,6 +62,12 @@
             <artifactId>jetty-servlet</artifactId>
             <version>9.4.27.v20200227</version>
         </dependency>
+    
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.3.0</version>
+        </dependency>
 
     </dependencies>
 
