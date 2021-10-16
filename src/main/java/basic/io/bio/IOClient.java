@@ -20,9 +20,9 @@ public class IOClient {
                     try {
                         socket.getOutputStream().write((new Date() + ": hello world").getBytes());
                         Thread.sleep(2000);
-                        // if ((len = socket.getInputStream().read(data)) != -1) {
-                        //     System.out.println(new String(data, 0, len));
-                        // }
+                        if ((len = socket.getInputStream().read(data)) != -1) {
+                            System.out.println(new String(data, 0, len));
+                        }
                     } catch (Exception e) {
                     }
                 }

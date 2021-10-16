@@ -77,6 +77,12 @@ public class NIOServer {
                                     byteBuffer.flip();
                                     System.out.println(
                                         Charset.defaultCharset().newDecoder().decode(byteBuffer).toString());
+                                    
+                                    //（4）双向通信
+                                    byteBuffer.clear();
+                                    byteBuffer.put("From Nio".getBytes());
+                                    byteBuffer.flip();
+                                    clientChannel.write(byteBuffer);
                                 } finally {
                                     keyIterator.remove();
                                     key.interestOps(SelectionKey.OP_READ);
