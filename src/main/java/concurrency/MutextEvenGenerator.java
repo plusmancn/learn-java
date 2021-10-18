@@ -1,5 +1,6 @@
 package concurrency;
 
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -12,9 +13,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class MutextEvenGenerator extends IntGenerator {
     private int currentValue = 0;
     private Lock lock = new ReentrantLock();
+    private Condition condition = lock.newCondition();
 
     @Override
     public int next() {
+        
         lock.lock();
         try {
             ++currentValue;

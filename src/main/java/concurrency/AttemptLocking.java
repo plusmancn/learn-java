@@ -6,6 +6,7 @@ import java.util.concurrent.locks.*;
 
 public class AttemptLocking {
   private ReentrantLock lock = new ReentrantLock();
+  
   public void untimed() {
     boolean captured = lock.tryLock();
     try {
